@@ -8,26 +8,36 @@
      check(param, Match.OneOf(String, Object));
      check(tag, Match.OneOf([String], null));
 
-     Logger.log(param, tag);
+     Meteor.defer(function() {
+       Logger.log(param, tag);
+     });
    },
    logglyTrace: function(param) {
      check(param, Match.OneOf(String, Object));
 
-     Logger.trace(param);
+     Meteor.defer(function() {
+       Logger.trace(param);
+     });
    },
    logglyInfo: function(param) {
      check(param, Match.OneOf(String, Object));
 
-     Logger.info(param);
+     Meteor.defer(function() {
+       Logger.info(param);
+     });
    },
    logglyWarn: function(param) {
      check(param, Match.OneOf(String, Object));
 
-     Logger.warn(param);
+     Meteor.defer(function() {
+       Logger.warn(param);
+     });
    },
    logglyError: function(param) {
      check(param, Match.OneOf(String, Object));
 
-     Logger.error(param);
+     Meteor.defer(function() {
+       Logger.error(param);
+     });
    }
  });
